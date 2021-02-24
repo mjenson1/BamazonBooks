@@ -11,9 +11,18 @@
 <body>
     <div class="bg-dark text-white p-2">
         <span class="navbar-brand ml-2">BAMAZON BOOK STORE</span>
+        <div class="input-group rounded"> <!--I added in this bootstrap for a search button. It doesn't do anything but its cool!-->
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                   aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
     </div>
     <div class="row m-1 p-1">
         <div class="col-9">
             <div>@RenderBody()</div>
+        </div>
+    </div>
 </body>
 </html>

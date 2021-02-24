@@ -57,8 +57,10 @@ namespace BamazonBooks
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "P{page}", //changes the way the route looks
+                    new { Controller = "Home", action = "Index" });
+                endpoints.MapDefaultControllerRoute();
             });
 
             SeedData.EnsurePopulated(app); //can remove this once database has been created

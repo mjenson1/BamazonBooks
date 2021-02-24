@@ -35,7 +35,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
-                        Price = 9.95 // might need to make this a double
+                        Price = 9.95, 
+                        NumPages = 1488
 
                     },
                     new Book
@@ -49,7 +50,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58 // might need to make this a double
+                        Price = 14.58, 
+                        NumPages = 944
 
                     },
                     new Book
@@ -63,7 +65,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54 // might need to make this a double
+                        Price = 21.54, 
+                        NumPages = 832
 
                     },
                     new Book
@@ -77,7 +80,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61 // might need to make this a double
+                        Price = 11.61, 
+                        NumPages = 864
 
                     },
                     new Book
@@ -91,8 +95,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0812974492",
                         Classification = "Non-Fiction",
                         Category = "Historical",
-                        Price = 13.33 // might need to make this a double
-
+                        Price = 13.33,
+                        NumPages = 528
                     },
                     new Book
                     {
@@ -105,7 +109,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0804171281",
                         Classification = "Fiction",
                         Category = "Historical Fiction",
-                        Price = 15.95 // might need to make this a double
+                        Price = 15.95, 
+                        NumPages = 288
 
                     },
 
@@ -120,7 +125,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-1455586691",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 14.99 // might need to make this a double
+                        Price = 14.99,
+                        NumPages = 304
                     },
                     new Book
                     {
@@ -133,7 +139,8 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-1455523023",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 21.66 // might need to make this a double
+                        Price = 21.66, 
+                        NumPages = 240
                     },
                     new Book
                     {
@@ -146,11 +153,12 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-1591847984",
                         Classification = "Non-Fiction",
                         Category = "Business",
-                        Price = 29.16 // might need to make this a double
+                        Price = 29.16, 
+                        NumPages = 400
                     },
                     new Book
                     {
-                        //BookId = 9,
+                        //BookId = 10,
                         Title = "Sycamore Row",
                         AuthorGivenName = "John",
                         AuthorMiddleInitial = " ",
@@ -159,7 +167,50 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
                         ISBN = "978-0553393613",
                         Classification = "Fiction",
                         Category = "Thrillers",
-                        Price = 15.03 // might need to make this a double
+                        Price = 15.03, 
+                        NumPages = 642
+                    },
+                    new Book
+                    {
+                        //BookId = 11,
+                        Title = "Outliers",
+                        AuthorGivenName = "Malcolm",
+                        AuthorMiddleInitial = " ",
+                        AuthorLastName = "Gladwell",
+                        Publisher = "Back Bay Books",
+                        ISBN = "978-0316017930",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
+                        Price = 7.79,
+                        NumPages = 336
+                    },
+                    new Book
+                    {
+                        //BookId = 12,
+                        Title = "The Boys in the Boat",
+                        AuthorGivenName = "Daniel",
+                        AuthorMiddleInitial = "J.",
+                        AuthorLastName = "Brown",
+                        Publisher = "Penguin",
+                        ISBN = "978-0316497039",
+                        Classification = "Non-Fiction",
+                        Category = "Historical",
+                        Price = 10.94,
+                        NumPages = 404
+                    },
+                    new Book
+                    {
+                        //BookId = 13,
+                        Title = "A Man Called Ove",
+                        AuthorGivenName = "Fredrik",
+                        AuthorMiddleInitial = " ",
+                        AuthorLastName = "Backman",
+                        Publisher = "Washington Square Press",
+                        ISBN = "978-1476738024",
+                        Classification = "Fiction",
+                        Category = "Novel",
+                        Price = 8.98,
+                        NumPages = 337
                     }
 
                 ) ;
