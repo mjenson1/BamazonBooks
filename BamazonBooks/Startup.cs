@@ -56,10 +56,23 @@ namespace BamazonBooks
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    "pagination",
-                    "P{page}", //changes the way the route looks
+                //what if they type in category and page
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
                     new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+                
+                endpoints.MapControllerRoute("pagination",
+                    "Books/{page}", //changes the way the route looks
+                    new { Controller = "Home", action = "Index" });
+
                 endpoints.MapDefaultControllerRoute();
             });
 

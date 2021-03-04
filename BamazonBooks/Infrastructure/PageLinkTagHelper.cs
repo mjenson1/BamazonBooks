@@ -28,6 +28,9 @@ namespace BamazonBooks.Infrastructure
         public PagingInfo PageModel { get; set; } //using an internal class
         public string PageAction { get; set; }
 
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")] //adding a key-value pair
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>(); //adding to the page url values to build our link
+
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -43,7 +46,10 @@ namespace BamazonBooks.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a"); //building the tag
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i }); //attach the href. go to index 1 which gives you page 1
+
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction, 
+                    PageUrlValues); //building the page url value, stores the category or page in the dictionary object to build our endpoint
                 
                 if (PageClassesEnabled)
                 {

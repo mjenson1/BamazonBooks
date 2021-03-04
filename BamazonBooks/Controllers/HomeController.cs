@@ -23,21 +23,24 @@ namespace BamazonBooks.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             return View(new BookListViewModel
             {
                 Books = _repository.Books //passing the books from the database
+                    .Where(b => category == null || b.Category == category) // if category is null, or b type is the category, we'll get the right data 
                     .OrderBy(page => page.BookId) //to set up pages and display content based on the content 
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page, 
+                    CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
-            });
+                    TotalNumItems = category == null ? _repository.Books.Count() : //change this to remove xtra pages
+                        _repository.Books.Where(x => x.Category == category).Count()
+                },
+                CurrentCategory = category
+            }) ; ;
         }
 
         public IActionResult Privacy()

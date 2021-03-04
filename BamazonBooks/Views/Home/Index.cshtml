@@ -17,9 +17,10 @@
             </thead>
 
             <tbody>
-                @foreach (var x in Model.Books)
+                @foreach (var x in Model.Books) 
                 {
-                    <tr>
+                    <partial name="BookSummary" model="x" /> // just another way to organize your program
+                    @*<tr>
                         <td>@x.BookId</td>
                         <td>@x.Title</td>
                         <td>@x.AuthorGivenName</td>
@@ -31,7 +32,7 @@
                         <td>@x.Category</td>
                         <td>$@x.Price</td>
                         <td>@x.NumPages</td>
-                    </tr>
+                    </tr>*@
 
                 }
             </tbody>
@@ -42,4 +43,5 @@
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
      page-class-normal="btn-outline-dark" 
      page-class-selected="btn-primary"
+     page-url-category="@Model.CurrentCategory"
      class="btn-group pull-right m-1"></div> <!--All of the code here is new bootstrap that I have never used-->
