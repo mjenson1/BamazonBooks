@@ -4,6 +4,7 @@
 
 @model BookListViewModel
 <!--//IQueryable<Book>-->
+<!--the model expression at the top of the file specifies that the view expects to recieve a sequence of Books objects from the action method as its model data-->
 
 <header align="center">
     <h1>Available Books</h1>
@@ -17,7 +18,7 @@
             </thead>
 
             <tbody>
-                @foreach (var x in Model.Books) 
+                @foreach (var x in Model.Books) //the view just deals with how details of each Book object is displayed in html
                 {
                     <partial name="BookSummary" model="x" /> // just another way to organize your program
                     @*<tr>
@@ -33,6 +34,8 @@
                         <td>$@x.Price</td>
                         <td>@x.NumPages</td>
                     </tr>*@
+                    //I call the partial view using a partial element, using the name and model attributes to specify the name of the partial view and its view model. 
+                    //Using a partial view allows the same markup to be inserted into any view that needs to display a summary of a product.
 
                 }
             </tbody>
@@ -40,7 +43,9 @@
         
     </div>
 </div>
-<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+<div page-model="@Model.PagingInfo" page-action="Index" 
+     page-classes-enabled="true" 
+     page-class="btn"
      page-class-normal="btn-outline-dark" 
      page-class-selected="btn-primary"
      page-url-category="@Model.CurrentCategory"

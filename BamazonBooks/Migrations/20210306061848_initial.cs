@@ -11,7 +11,7 @@ namespace BamazonBooks.Migrations
                 columns: table => new
                 {
                     BookId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(nullable: false),
                     AuthorGivenName = table.Column<string>(nullable: false),
                     AuthorMiddleInitial = table.Column<string>(nullable: true),
@@ -20,7 +20,8 @@ namespace BamazonBooks.Migrations
                     ISBN = table.Column<string>(nullable: false),
                     Classification = table.Column<string>(nullable: false),
                     Category = table.Column<string>(nullable: false),
-                    Price = table.Column<double>(nullable: false)
+                    Price = table.Column<double>(nullable: false),
+                    NumPages = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

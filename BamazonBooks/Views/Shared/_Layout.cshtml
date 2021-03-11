@@ -7,24 +7,27 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" /> <!--add this for the icon image-->
 </head>
 <body>
     <div class="bg-dark text-white p-2">
-        <span class="navbar-brand ml-2">BAMAZON BOOK STORE</span>
-        <div class="input-group rounded"> <!--I added in this bootstrap for a search button. It doesn't do anything but its cool!-->
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                   aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-            </span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="navbar-brand ml-2">BAMAZON BOOK STORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary/> <!--inserts the cart summary into the navbar so it is on all pages-->
+                </div>
+            </div>
         </div>
     </div>
     
     <div class="row m-1 p-1">
-        <vc:navigation-menu />
+        <vc:navigation-menu />  <!--This adds the category list from the Components folder to all pages-->
         <div class="col-9">
             <div>@RenderBody()</div>
         </div>
     </div>
 </body>
 </html>
+
+<!--this file defines a simple HTML document into which the contents of other views will be inserted by the RenderBody expression.-->

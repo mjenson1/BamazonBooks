@@ -12,4 +12,16 @@
     <td>@Model.Category</td>
     <td>$@Model.Price</td>
     <td>@Model.NumPages</td>
+    <td>
+        <form id="@Model.BookId" asp-page="/Cart" method="post"> <!--keeping track of each book-->
+            <input type="hidden" asp-for="BookId" /> <!--needs to match on the other side-->
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" /> <!--keeps track of the books in the cart-->
+            <span class="card-text p-1">
+                @Model.Title
+                <button type="submit" class="btn-success btn-sm pull-right" style="float:right">
+                    Add to cart <!--attaching a bunch of stuff to this button so this is getting called on a partial view from the index-->
+                </button>
+            </span>
+        </form>
+    </td>
 </tr>

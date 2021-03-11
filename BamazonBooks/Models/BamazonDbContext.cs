@@ -16,3 +16,6 @@ namespace BamazonBooks.Models
         public DbSet<Book> Books { get; set; }
     }
 }
+//provides access to the database through a context class
+//the DbContext base class provides access to the Entity Framework Core's underlying functionality and the "Books" property  will provide
+//access to the Books objects in the database. The BamazonDbContext class is derived from the DbContext and adds the properties that will be used to read and write the application's data

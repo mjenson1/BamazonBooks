@@ -1,5 +1,8 @@
 ﻿@using BamazonBooks
-@using BamazonBooks.Models
-@using BamazonBooks.Models.ViewModels
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using BamazonBooks.Models <!--allows me to use the types in the BamazonBooks.Models namespace w/o needing to refer to the namespace-->
+@using BamazonBooks.Models.ViewModels <!--used to refer to the view model classes in the view without having to qualify their names with the namespace-->
+@using BamazonBooks.Infrastructure <!--can see the classes we've added-->
+<!--enables taghelpers. used to create HTML elements that refelect the config of the app-->
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers 
 @addTagHelper *, BamazonBooks
+<!--tells ASP.NET Core to look for a tag helper classes in the BamazonBooks project-->

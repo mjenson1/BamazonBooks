@@ -32,7 +32,7 @@ namespace BamazonBooks.Infrastructure
         public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>(); //adding to the page url values to build our link
 
         public bool PageClassesEnabled { get; set; } = false;
-        public string PageClass { get; set; }
+        public string PageClass { get; set; } //attributes in the cshtml
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
 
@@ -41,13 +41,13 @@ namespace BamazonBooks.Infrastructure
         {
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
-            TagBuilder result = new TagBuilder("div");
+            TagBuilder result = new TagBuilder("div"); //result is the div element 
 
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a"); //building the tag
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, 
                     PageUrlValues); //building the page url value, stores the category or page in the dictionary object to build our endpoint
                 

@@ -12,16 +12,16 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
     {
         //private const double V = 9.99;
 
-        public static void EnsurePopulated (IApplicationBuilder application)
+        public static void EnsurePopulated (IApplicationBuilder application) //receives an IApplivationBuilder argument, which is the interface used in the Configure method of the Startup class to register middleware components to handle HTTP requests. Also provides access to the app's services 
         {
             BamazonDbContext context = application.ApplicationServices.
-                CreateScope().ServiceProvider.GetRequiredService<BamazonDbContext>();
+                CreateScope().ServiceProvider.GetRequiredService<BamazonDbContext>(); //related to user sessions? 
             if(context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
 
-            if(!context.Books.Any())
+            if(!context.Books.Any()) // checks if there are any Books objects in the database. if not the database is populated using a collection of Books objects using the AddRange method.
             {
                 context.Books.AddRange(
                     new Book
@@ -215,7 +215,7 @@ namespace BamazonBooks.Models // this whole page can be deleted after the DB is 
 
                 ) ;
 
-                context.SaveChanges();
+                context.SaveChanges(); //written to the database using the SaveChanges
             }
         }
     }
